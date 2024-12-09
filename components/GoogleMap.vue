@@ -1,0 +1,3 @@
+<template>
+    <iframe width="350" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=350&amp;height=300&amp;hl=en&amp;q=%CE%99%CF%89%CF%83%CE%AE%CF%86%20%CF%84%CF%89%CE%BD%20%CE%A1%CF%89%CE%B3%CF%8E%CE%BD%2015%20%CE%91%CE%B8%CE%AE%CE%BD%CE%B1+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+</template>

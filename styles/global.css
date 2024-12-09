@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply overflow-x-hidden antialiased;
+}
+
+main {
+  min-height: 60vh;
+}
+
+[data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white {
+  @apply pt-0 md:pt-0;
+}
+
+a:hover {
+  color: #EF1B27;
+  text-decoration: underline;
+  cursor: pointer;
+}
