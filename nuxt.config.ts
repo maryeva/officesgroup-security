@@ -26,10 +26,7 @@ export default defineNuxtConfig({
   },
 
   css: [
-    '~/styles/global.css',
-    '@fontsource/inter/400.css',
-    '@fontsource/inter/500.css',
-    '@fontsource/inter/600.css'
+    '~/styles/global.css'
   ],
 
   modules: [
