@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { type Content, isFilled } from "@prismicio/client";
+import { getSliceComponentProps } from "@prismicio/vue";
 
 defineProps(
   getSliceComponentProps<Content.AlternateGridSlice>([
