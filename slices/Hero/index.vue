@@ -39,7 +39,7 @@ const serializer: HTMLRichTextMapSerializer = {
         <PrismicLink
           v-if="slice.primary.buttonLink && ('id' in slice.primary.buttonLink || 'url' in slice.primary.buttonLink)"
           :field="slice.primary.buttonLink"
-          class="rounded text-white px-5 py-3 font-medium text-slate-800 bg-[#EF1B27] hover:no-underline hover:text-white hover:brightness-90"
+          class="rounded text-white px-5 py-3 font-medium text-slate-800 bg-brand hover:no-underline hover:text-white hover:brightness-90"
         >
           {{ slice.primary.buttonText || "Learn More" }}
         </PrismicLink>

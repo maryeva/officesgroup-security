@@ -15,7 +15,8 @@ main {
 }
 
 a:hover {
-  color: #EF1B27;
+  @apply text-brand;
   text-decoration: underline;
   cursor: pointer;
+  transition: color 100ms ease-in-out;
 }
