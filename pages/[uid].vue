@@ -9,7 +9,7 @@ const { data: page } = useAsyncData(`page-${route.params.uid}`, () =>
 )
 
 useHead({
-  title: computed(() => prismic.asText(page.value?.data.title)),
+  title: computed(() => `Officesgroup - Security | ${prismic.asText(page.value?.data.title)}`),
   script: {
     async: true,
     defer: true,

@@ -19,7 +19,7 @@ const { data, status } = useAsyncData(`[product_category-uid-${route.params.uid}
 });
 
  useHead({
-  title: data.value?.document.data.category,
+  title: `Officesgroup - Security | ${data.value?.document.data.category}`,
   meta: [
     {
       name: data.value?.document.data.category,

@@ -27,7 +27,7 @@ const { data: related } = await useAsyncData(`[related-products-${route.params.u
 relatedProducts.value = related.value?.filter(product => product.id !== page.value?.id).slice(0, 4)
 
 useHead({
-  title: page.value?.data.name,
+  title: `Officesgroup - Security | ${page.value?.data.name}`,
   meta: [
     {
       name: page.value?.data.name,

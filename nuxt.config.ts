@@ -7,18 +7,13 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Prismic + Nuxt multi-page example',
+      title: 'Officesgroup - Security',
       htmlAttrs: {
         lang: 'en'
       },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Prismic + Nuxt multi-page example'
-        },
         { name: 'format-detection', content: 'telephone=no' }
       ],
       link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
