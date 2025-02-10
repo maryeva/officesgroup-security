@@ -15,13 +15,13 @@ const settings = useSettings()
         to="/"
         class="text-xl font-semibold tracking-tight"
       >
-        <img v-if='settings?.data.logo.url' :src='settings?.data.logo.url'/>
+        <img v-if='settings?.data.logo.url' :src='settings?.data.logo.url' class="w-[80%]"/>
         <p v-else>
           {{
             $prismic.asText(settings?.data.siteTitle)
           }}
         </p>
-      </NuxtLink>
+        </NuxtLink>
       <nav>
         <ul
           class="flex flex-wrap gap-6 md:gap-10"

@@ -54,6 +54,7 @@ const truncateText = (text: string) => {
         <h1>{{ data?.document.data.category }}</h1>
       </div>
     </Bounded>
+    <img src="/public/wave_bg.png" class="absolute bg-none bg-bottom bg-no-repeat left-0 right-0 bottom-[-60px]"/>
   </section>
   <section class="px-6 py-20 md:py-20 bg-white">
     <PrismicRichText

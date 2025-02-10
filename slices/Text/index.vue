@@ -12,7 +12,7 @@ defineProps(getSliceComponentProps<Content.TextSlice>(
 <template>
   <Bounded
     as="section"
-    class="bg-white leading-relaxed"
+    class="bg-none leading-relaxed"
   >
     <PrismicRichText
       :field="slice.primary.text"

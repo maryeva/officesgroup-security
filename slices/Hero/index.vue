@@ -45,5 +45,6 @@ const serializer: HTMLRichTextMapSerializer = {
         </PrismicLink>
       </div>
     </Bounded>
+    <img src="/public/wave_bg.png" class="absolute bg-none bg-bottom bg-no-repeat left-0 right-0 bottom-[-60px]"/>
   </section>
 </template>
