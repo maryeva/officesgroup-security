@@ -10,6 +10,7 @@
         "type": "Group",
         "config": {
           "label": "Links",
+          "repeat": true,
           "fields": {
             "label": {
               "type": "StructuredText",
