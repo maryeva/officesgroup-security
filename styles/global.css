@@ -10,10 +10,6 @@ main {
   min-height: 60vh;
 }
 
-[data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white {
-  @apply pt-0 md:pt-0;
-}
-
 a:hover {
   @apply text-brand;
   text-decoration: underline;

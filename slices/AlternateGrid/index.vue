@@ -20,7 +20,7 @@ defineProps(
   >
     <div
       :class="[
-        'es-alternate-grid__content flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row dark:border-gray-700 dark:bg-gray-800',
+        'es-alternate-grid__content flex flex-col items-center border border-gray-200 rounded-lg shadow-sm md:flex-row dark:border-gray-700 dark:bg-gray-800',
         isFilled.image(slice.primary.image)
           ? 'es-alternate-grid__content--with-image'
           : '',
@@ -84,6 +84,10 @@ defineProps(
   justify-self: center;
 }
 
+.es-alternate-grid__content svg {
+  height: 180px;
+}
+
 @media (min-width: 640px) {
   .es-alternate-grid__content--with-image {
     grid-template-columns: repeat(2, 1fr);
@@ -101,10 +105,6 @@ defineProps(
   height: 100%;
   max-width: 100%;
   align-self: center;
-}
-
-svg {
-  height: 180px;
 }
 
 .es-alternate-grid__image--left {

@@ -38,7 +38,7 @@ useHead({
 </script>
 
 <template>
-  <section class="px-6 py-20 md:py-28 bg-white">
+  <section class="px-6 py-20 md:py-28">
     <h1 class="font-semibold leading-tight tracking-tight md:leading-tight text-4xl md:text-5xl mb-7 mt-12 first:mt-0 last:mb-0">{{ page?.data.name }}</h1>
     <div class="grid grid-cols-6 content-center gap-10">
         <PrismicImage
@@ -54,7 +54,7 @@ useHead({
     </div>
     <img src="/public/wave_bg.png" class="absolute bg-none bg-bottom bg-no-repeat left-0 right-0 bottom-[-60px]"/>
   </section>
-  <section class="px-6 py-20 md:py-28 bg-white">
+  <section class="px-6 py-20 md:py-28">
     <h2 class="font-semibold leading-tight tracking-tight md:leading-tight text-3xl md:text-4xl mb-7 mt-12 first:mt-0 last:mb-0">Δείτε επίσης</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-20">
       <div v-for="product in relatedProducts" :key="product.id">

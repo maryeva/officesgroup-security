@@ -16,7 +16,6 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
 <template>
   <Bounded
     as="section"
-    class="bg-white"
   >
     <div class="grid gap-12">
       <Heading

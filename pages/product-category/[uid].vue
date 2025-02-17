@@ -56,7 +56,7 @@ const truncateText = (text: string) => {
     </Bounded>
     <img src="/public/wave_bg.png" class="absolute bg-none bg-bottom bg-no-repeat left-0 right-0 bottom-[-60px]"/>
   </section>
-  <section class="px-6 py-20 md:py-20 bg-white">
+  <section class="px-6 py-20 md:py-20">
     <PrismicRichText
       v-if="isFilled.richText(data?.document.data.description)"
       :field="data?.document.data.description"

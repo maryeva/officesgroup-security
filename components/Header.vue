@@ -1,6 +1,7 @@
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+import LogoSVG from './LogoSVG.vue';
 const prismic = usePrismic();
 const navigation = useNavigation()
 const settings = useSettings()
@@ -19,8 +20,7 @@ const gotoPage = (link) => {
   <Bounded as="header" y-padding="sm">
     <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
       <NuxtLink to="/" class="text-xl font-semibold tracking-tight">
-        <img v-if='settings?.data.logo.url' :src='settings?.data.logo.url' class="w-[80%]"/>
-        <p v-else> {{ $prismic.asText(settings?.data.siteTitle) }}</p>
+        <LogoSVG class="h-[50px]"/>
       </NuxtLink>
 
      <Menu class="flex flex-wrap gap-6 md:gap-10">
