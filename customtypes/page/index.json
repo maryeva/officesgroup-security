@@ -35,6 +35,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "offer": {
+              "type": "SharedSlice"
+            },
             "alternate_grid": {
               "type": "SharedSlice"
             },

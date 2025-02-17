@@ -60,7 +60,7 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
   Lang
 >
 
-type PageDocumentDataSlicesSlice = AlternateGridSlice | HeroSlice | TextSlice | ImageCardsSlice
+type PageDocumentDataSlicesSlice = OfferSlice | AlternateGridSlice | HeroSlice | TextSlice | ImageCardsSlice
 
 /**
  * Content for Page documents
@@ -676,6 +676,54 @@ type ImageCardsSliceVariation = ImageCardsSliceDefault
 export type ImageCardsSlice = prismic.SharedSlice<'image_cards', ImageCardsSliceVariation>
 
 /**
+ * Primary content in *Offer → Default → Primary*
+ */
+export interface OfferSliceDefaultPrimary {
+  /**
+   * title field in *Offer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Title
+   * - **API ID Path**: offer.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * description field in *Offer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Description
+   * - **API ID Path**: offer.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField
+}
+
+/**
+ * Default variation for Offer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OfferSliceDefault = prismic.SharedSliceVariation<'default', Simplify<OfferSliceDefaultPrimary>, never>
+
+/**
+ * Slice variation for *Offer*
+ */
+type OfferSliceVariation = OfferSliceDefault
+
+/**
+ * Offer Shared Slice
+ *
+ * - **API ID**: `offer`
+ * - **Description**: Offer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OfferSlice = prismic.SharedSlice<'offer', OfferSliceVariation>
+
+/**
  * Primary content in *Text → Default → Primary*
  */
 export interface TextSliceDefaultPrimary {
@@ -786,6 +834,10 @@ declare module '@prismicio/client' {
       ImageCardsSliceDefaultPrimary,
       ImageCardsSliceVariation,
       ImageCardsSliceDefault,
+      OfferSlice,
+      OfferSliceDefaultPrimary,
+      OfferSliceVariation,
+      OfferSliceDefault,
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceTwoColumnsPrimary,

@@ -16,6 +16,7 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
 <template>
   <Bounded
     as="section"
+    y-padding="base"
   >
     <div class="grid gap-12">
       <Heading
@@ -32,36 +33,43 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
         >
           <div
             v-if="card.image.url"
+            class="relative filter grayscale-50 hover:filter-none hover:cursor-pointer"
           >
             <PrismicLink
               v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)"
               :field="card.buttonLink"
-              class="font-semibold"
               tabindex="-1"
             >
-              <PrismicImage :field="card.image" class="rounded-2xl"/>
+              <PrismicImage :field="card.image" class="rounded-2xl shadow-lg"/>
             </PrismicLink>
             <PrismicImage
               v-else
               :field="card.image"
-              class="rounded-2xl"
+              class="rounded-2xl shadow-lg"
             />
-          </div>
-          <PrismicRichText
-            :field="card.text"
-            class="leading-relaxed"
-            wrapper="div"
-          />
-          <div v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)">
-            <PrismicLink
-              :field="card.buttonLink"
-              class="font-semibold"
-            >
-              {{ card.buttonText || "More Info" }}
-            </PrismicLink>
+            <div v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)">
+              <PrismicLink
+                :field="card.buttonLink"
+              >
+              </PrismicLink>
+            </div>
+            <div class="overlay h-[100px] w-full absolute bottom-0 left-0 right-0 rounded-2xl">
+              <PrismicRichText
+                :field="card.text"
+                class="absolute bottom-[20px] text-xl font-extrabold leading-relaxed ml-4 text-white"
+                wrapper="div"
+              />
+            </div>
           </div>
         </li>
       </ul>
     </div>
   </Bounded>
 </template>
+
+<style scoped>
+.overlay {
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.486453956582633) 42%, rgba(255,255,255,0) 100%);
+}
+</style>

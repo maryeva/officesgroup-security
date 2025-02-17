@@ -9,6 +9,9 @@ module.exports = {
           DEFAULT: '#a20b14',
         },
       },
+      grayscale: {
+        50: '50%',
+      },
     },
   },
 }

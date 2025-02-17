@@ -11,7 +11,6 @@ const { data: page } = await useAsyncData(`[product-categories]`, () =>
 );
 
 const gotoPage = (link) => {
-  console.log('click')
   window.location.href = link
 }
 </script>
@@ -19,7 +18,7 @@ const gotoPage = (link) => {
 <template>
   <Bounded as="header" y-padding="sm">
     <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
-      <NuxtLink to="/" class="text-xl font-semibold tracking-tight">
+      <NuxtLink to="/home" class="text-xl font-semibold tracking-tight">
         <LogoSVG class="h-[50px]"/>
       </NuxtLink>
 

@@ -1,0 +1,33 @@
+{
+  "id": "offer",
+  "type": "SharedSlice",
+  "name": "Offer",
+  "description": "Offer",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": "Title"
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "description",
+            "placeholder": "Description"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
