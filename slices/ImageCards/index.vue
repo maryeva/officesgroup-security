@@ -16,7 +16,6 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
 <template>
   <Bounded
     as="section"
-    y-padding="base"
   >
     <div class="grid gap-12">
       <Heading
@@ -33,14 +32,21 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
         >
           <div
             v-if="card.image.url"
-            class="relative filter grayscale-50 hover:filter-none hover:cursor-pointer"
-          >
+            class="relative filter grayscale-50 hover:filter-none hover:cursor-pointer overlay"
+          > 
             <PrismicLink
               v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)"
               :field="card.buttonLink"
               tabindex="-1"
             >
               <PrismicImage :field="card.image" class="rounded-2xl shadow-lg"/>
+              <div class="h-[100px] w-full absolute bottom-0 left-0 right-0 rounded-2xl ">
+                <PrismicRichText
+                  :field="card.text"
+                  class="absolute bottom-[20px] text-xl font-extrabold leading-relaxed ml-4 text-white"
+                  wrapper="div"
+                />
+              </div>
             </PrismicLink>
             <PrismicImage
               v-else
@@ -53,13 +59,6 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
               >
               </PrismicLink>
             </div>
-            <div class="overlay h-[100px] w-full absolute bottom-0 left-0 right-0 rounded-2xl">
-              <PrismicRichText
-                :field="card.text"
-                class="absolute bottom-[20px] text-xl font-extrabold leading-relaxed ml-4 text-white"
-                wrapper="div"
-              />
-            </div>
           </div>
         </li>
       </ul>
@@ -68,8 +67,17 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
 </template>
 
 <style scoped>
-.overlay {
-  background: rgb(0,0,0);
-  background: linear-gradient(0deg, rgba(0,0,0,0.486453956582633) 42%, rgba(255,255,255,0) 100%);
+.overlay:before {
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7) 65%);
+  @apply rounded-2xl;
+  bottom: 0;
+  content: "";
+  height: 50%;
+  left: 0;
+  opacity: 0.7;
+  position: absolute;
+  right: 0;
+  transition: opacityease-in-out;
+  transition-duration: inherit;
 }
 </style>

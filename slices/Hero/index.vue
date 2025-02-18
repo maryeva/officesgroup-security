@@ -17,12 +17,12 @@ const serializer: HTMLRichTextMapSerializer = {
 </script>
 
 <template>
-  <section class="relative bg-slate-900 text-white">
+  <section class="relative bg-slate-900 text-white h-[500px]">
     <figure class="absolute inset-0">
       <PrismicImage
         v-if="slice.primary.backgroundImage.url"
         :field="slice.primary.backgroundImage"
-        class="pointer-events-none select-none object-cover opacity-40 h-full w-full"
+        class="pointer-events-none select-none object-cover opacity-70 h-full w-full"
       />
     </figure>
     <Bounded
@@ -33,7 +33,7 @@ const serializer: HTMLRichTextMapSerializer = {
         <PrismicRichText
           :field="slice.primary.text"
           :html-serializer="serializer"
-          class="max-w-2xl text-center"
+          class="max-w-2xl text-center text-5xl font-extrabold"
           wrapper="div"
         />
         <PrismicLink
