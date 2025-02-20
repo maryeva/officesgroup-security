@@ -19,9 +19,9 @@ defineProps({
   <Component
     :is="as"
     :data-collapsible="collapsible || null"
-    class="px-6"
+    class="px-6 bounded-container"
     :class="{
-      'py-4 md:py-8': yPadding === 'sm',
+      'py-4': yPadding === 'sm',
       'py-20 md:py-28': yPadding === 'md',
       'py-32 md:py-48': yPadding === 'lg',
     }"
@@ -31,4 +31,10 @@ defineProps({
     </div>
   </Component>
 </template>
+
+<style>
+.bounded-container:nth-child(2) {
+  margin-top:50px;
+}
+</style>
 
