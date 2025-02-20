@@ -19,7 +19,7 @@ const wordsArray = ['ΑΣΦΑΛΕΙΑ','ΣΙΓΟΥΡΙΑ','ΑΠΟΤΕΛΕΣΜΑ�
 </script>
 
 <template>
-  <section class="relative bg-slate-900 text-white h-[500px]">
+  <section class="relative bg-slate-900 text-white h-[500px] mb-[50px]">
     <figure class="absolute inset-0">
       <PrismicImage
         v-if="slice.primary.backgroundImage.url"

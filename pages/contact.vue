@@ -32,7 +32,7 @@ const handleFormSubmit = async (event) => {
 <template>
   <Bounded
       y-padding="sm"
-      class="relative"
+      class="relative mt-[50px]"
     >
     <div class="grid grid-cols-12 gap-x-6">
       <div class="col-span-12 md:col-start-3 md:col-span-8 mb-8">
