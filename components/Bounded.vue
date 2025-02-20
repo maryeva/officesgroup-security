@@ -33,7 +33,7 @@ defineProps({
 </template>
 
 <style>
-.bounded-container:nth-child(2) {
+section.bounded-container:nth-child(2) {
   margin-top:50px;
 }
 </style>
