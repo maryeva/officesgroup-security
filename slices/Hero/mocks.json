@@ -20,18 +20,6 @@
 					}
 				]
 			},
-			"buttonLink": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://prismic.io"
-				}
-			},
-			"buttonText": {
-				"__TYPE__": "FieldContent",
-				"value": "careful",
-				"type": "Text"
-			},
 			"backgroundImage": {
 				"origin": {
 					"id": "main",
@@ -54,6 +42,24 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"words": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"word",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "dinner",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": [

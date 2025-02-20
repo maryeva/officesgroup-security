@@ -511,6 +511,21 @@ type AlternateGridSliceVariation = AlternateGridSliceDefault | AlternateGridSlic
 export type AlternateGridSlice = prismic.SharedSlice<'alternate_grid', AlternateGridSliceVariation>
 
 /**
+ * Item in *Hero → Default → Primary → words*
+ */
+export interface HeroSliceDefaultPrimaryWordsItem {
+  /**
+   * word field in *Hero → Default → Primary → words*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Word
+   * - **API ID Path**: hero.default.primary.words[].word
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  word: prismic.KeyTextField
+}
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -525,26 +540,6 @@ export interface HeroSliceDefaultPrimary {
   text: prismic.RichTextField
 
   /**
-   * Button Link field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Button Link
-   * - **API ID Path**: hero.default.primary.buttonLink
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  buttonLink: prismic.LinkField
-
-  /**
-   * Button Text field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.buttonText
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  buttonText: prismic.KeyTextField
-
-  /**
    * Background Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
@@ -553,6 +548,16 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   backgroundImage: prismic.ImageField<never>
+
+  /**
+   * words field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.words[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  words: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryWordsItem>>
 }
 
 /**
@@ -826,6 +831,7 @@ declare module '@prismicio/client' {
       AlternateGridSliceDefault,
       AlternateGridSliceImageRight,
       HeroSlice,
+      HeroSliceDefaultPrimaryWordsItem,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,

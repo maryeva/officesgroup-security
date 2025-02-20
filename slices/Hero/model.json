@@ -20,25 +20,28 @@
             "multi": "paragraph,heading1,strong,em"
           }
         },
-        "buttonLink": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "placeholder": "Button Link",
-            "allowTargetBlank": false,
-            "select": null
-          }
-        },
-        "buttonText": {
-          "type": "Text",
-          "config": { "label": "Button Text", "placeholder": "" }
-        },
         "backgroundImage": {
           "type": "Image",
           "config": {
             "label": "Background Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "words": {
+          "type": "Group",
+          "config": {
+            "label": "words",
+            "repeat": true,
+            "fields": {
+              "word": {
+                "type": "Text",
+                "config": {
+                  "label": "word",
+                  "placeholder": "Word"
+                }
+              }
+            }
           }
         }
       },
