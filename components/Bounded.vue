@@ -22,11 +22,11 @@ defineProps({
     class="px-6 bounded-container"
     :class="{
       'py-4': yPadding === 'sm',
-      'py-20 md:py-28': yPadding === 'md',
+      'py-20 md:py-20': yPadding === 'md',
       'py-32 md:py-48': yPadding === 'lg',
     }"
   >
-    <div class="mx-auto w-full max-w-[80%]">
+    <div class="md:mx-auto w-full max-w-[90%]">
       <slot />
     </div>
   </Component>

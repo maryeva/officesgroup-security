@@ -60,7 +60,7 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
   Lang
 >
 
-type PageDocumentDataSlicesSlice = OfferSlice | AlternateGridSlice | HeroSlice | TextSlice | ImageCardsSlice
+type PageDocumentDataSlicesSlice = HighlightTextSlice | OfferSlice | HeroSlice | TextSlice | ImageCardsSlice
 
 /**
  * Content for Page documents
@@ -381,136 +381,6 @@ export type AllDocumentTypes =
   | SettingsDocument
 
 /**
- * Primary content in *AlternateGrid → Default → Primary*
- */
-export interface AlternateGridSliceDefaultPrimary {
-  /**
-   * title field in *AlternateGrid → Default → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: alternate_grid.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField
-
-  /**
-   * description field in *AlternateGrid → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: alternate_grid.default.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField
-
-  /**
-   * image field in *AlternateGrid → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: alternate_grid.default.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>
-
-  /**
-   * Content Link field in *AlternateGrid → Default → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: alternate_grid.default.primary.content_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  content_link: prismic.ContentRelationshipField
-}
-
-/**
- * Default variation for AlternateGrid Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AlternateGridSliceDefault = prismic.SharedSliceVariation<
-  'default',
-  Simplify<AlternateGridSliceDefaultPrimary>,
-  never
->
-
-/**
- * Primary content in *AlternateGrid → Image Right → Primary*
- */
-export interface AlternateGridSliceImageRightPrimary {
-  /**
-   * title field in *AlternateGrid → Image Right → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: alternate_grid.imageRight.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField
-
-  /**
-   * description field in *AlternateGrid → Image Right → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: alternate_grid.imageRight.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField
-
-  /**
-   * image field in *AlternateGrid → Image Right → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: alternate_grid.imageRight.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>
-
-  /**
-   * Content link field in *AlternateGrid → Image Right → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: alternate_grid.imageRight.primary.content_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  content_link: prismic.ContentRelationshipField
-}
-
-/**
- * Image Right variation for AlternateGrid Slice
- *
- * - **API ID**: `imageRight`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AlternateGridSliceImageRight = prismic.SharedSliceVariation<
-  'imageRight',
-  Simplify<AlternateGridSliceImageRightPrimary>,
-  never
->
-
-/**
- * Slice variation for *AlternateGrid*
- */
-type AlternateGridSliceVariation = AlternateGridSliceDefault | AlternateGridSliceImageRight
-
-/**
- * AlternateGrid Shared Slice
- *
- * - **API ID**: `alternate_grid`
- * - **Description**: AlternateGrid
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AlternateGridSlice = prismic.SharedSlice<'alternate_grid', AlternateGridSliceVariation>
-
-/**
  * Item in *Hero → Default → Primary → words*
  */
 export interface HeroSliceDefaultPrimaryWordsItem {
@@ -582,6 +452,73 @@ type HeroSliceVariation = HeroSliceDefault
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>
+
+/**
+ * Item in *HighlightText → Default → Primary → highlight text*
+ */
+export interface HighlightTextSliceDefaultPrimaryHighlightTextItem {
+  /**
+   * heading field in *HighlightText → Default → Primary → highlight text*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Heading
+   * - **API ID Path**: highlight_text.default.primary.highlight_text[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField
+
+  /**
+   * text field in *HighlightText → Default → Primary → highlight text*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: text
+   * - **API ID Path**: highlight_text.default.primary.highlight_text[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField
+}
+
+/**
+ * Primary content in *HighlightText → Default → Primary*
+ */
+export interface HighlightTextSliceDefaultPrimary {
+  /**
+   * highlight text field in *HighlightText → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlight_text.default.primary.highlight_text[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  highlight_text: prismic.GroupField<Simplify<HighlightTextSliceDefaultPrimaryHighlightTextItem>>
+}
+
+/**
+ * Default variation for HighlightText Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HighlightTextSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<HighlightTextSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *HighlightText*
+ */
+type HighlightTextSliceVariation = HighlightTextSliceDefault
+
+/**
+ * HighlightText Shared Slice
+ *
+ * - **API ID**: `highlight_text`
+ * - **Description**: HighlightText
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HighlightTextSlice = prismic.SharedSlice<'highlight_text', HighlightTextSliceVariation>
 
 /**
  * Item in *ImageCards → Default → Primary → Cards*
@@ -824,17 +761,16 @@ declare module '@prismicio/client' {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
-      AlternateGridSlice,
-      AlternateGridSliceDefaultPrimary,
-      AlternateGridSliceImageRightPrimary,
-      AlternateGridSliceVariation,
-      AlternateGridSliceDefault,
-      AlternateGridSliceImageRight,
       HeroSlice,
       HeroSliceDefaultPrimaryWordsItem,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HighlightTextSlice,
+      HighlightTextSliceDefaultPrimaryHighlightTextItem,
+      HighlightTextSliceDefaultPrimary,
+      HighlightTextSliceVariation,
+      HighlightTextSliceDefault,
       ImageCardsSlice,
       ImageCardsSliceDefaultPrimaryCardsItem,
       ImageCardsSliceDefaultPrimary,

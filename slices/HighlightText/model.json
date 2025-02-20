@@ -1,0 +1,44 @@
+{
+  "id": "highlight_text",
+  "type": "SharedSlice",
+  "name": "HighlightText",
+  "description": "HighlightText",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "highlight_text": {
+          "type": "Group",
+          "config": {
+            "label": "highlight text",
+            "repeat": true,
+            "fields": {
+              "heading": {
+                "type": "Text",
+                "config": {
+                  "label": "heading",
+                  "placeholder": "Heading"
+                }
+              },
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "text",
+                  "placeholder": "text",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,heading3,strong,em,hyperlink,list-item,o-list-item"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

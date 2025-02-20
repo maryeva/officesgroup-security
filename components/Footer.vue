@@ -6,7 +6,7 @@
   <Bounded
     as="footer"
     y-padding="sm"
-    class="bg-white border-brand border-t-2 mt-16"
+    class="bg-white border-brand border-t-2 mt-8"
   >
     <footer class="text-slate-800 pt-8">
       <div class="grid grid-cols-2 gap-4 content-center">
