@@ -25,11 +25,14 @@ const gotoPage = (link) => {
      <Menu class="hidden md:flex flex-wrap gap-6 md:gap-10">
       <div>
         <MenuButton v-for="item in navigation?.data.links" :key="$prismic.asText(item.label) || ''" class="relative font-semibold text-slate-800 tracking-tight">
-          <span v-if="$prismic.asLink(item.link) === '/products'" class="uppercase">{{ $prismic.asText(item.label) }}</span>
+          <div v-if="$prismic.asLink(item.link) === '/products'" class="group inline-block uppercase mt-[1px]">
+            <span class="group-hover:text-brand group-hover:underline">{{ $prismic.asText(item.label) }}</span>
+            <ChevronDownIcon v-if="$prismic.asLink(item.link) === '/products'" class="-mr-1 size-5 text-slate-800 group-hover:text-brand inline-block" aria-hidden="true" />
+          </div>
           <PrismicLink v-else :field="item.link" class="uppercase">
             {{ $prismic.asText(item.label) }}
           </PrismicLink>
-          <ChevronDownIcon v-if="$prismic.asLink(item.link) === '/products'" class="-mr-1 size-5 text-slate-800 inline-block hover:text-brand" aria-hidden="true" />
+          
   
           <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
             <MenuItems v-if="$prismic.asLink(item.link) === '/products'" class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden">
