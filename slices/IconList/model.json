@@ -1,0 +1,35 @@
+{
+  "id": "icon_list",
+  "type": "SharedSlice",
+  "name": "IconList",
+  "description": "IconList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "list_items": {
+          "type": "Group",
+          "config": {
+            "label": "list items",
+            "repeat": true,
+            "fields": {
+              "item": {
+                "type": "Text",
+                "config": {
+                  "label": "item",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

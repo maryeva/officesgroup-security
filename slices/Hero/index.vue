@@ -36,7 +36,7 @@ const wordsArray = ['ΑΣΦΑΛΕΙΑ','ΣΙΓΟΥΡΙΑ','ΑΠΟΤΕΛΕΣΜΑ�
           :field="slice.primary.text"
           :html-serializer="serializer"
           class="max-w-2xl text-center text-5xl font-extrabold inline-block md:mr-4"
-          wrapper="div"
+          wrapper="h1"
         />
         <div  id="container" class="hidden md:block inline-block md:mt-[5px]" v-if="slice.primary.words">
           <div id="word" class="relative w-fit">

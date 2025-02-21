@@ -35,6 +35,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "icon_list": {
+              "type": "SharedSlice"
+            },
             "highlight_text": {
               "type": "SharedSlice"
             },

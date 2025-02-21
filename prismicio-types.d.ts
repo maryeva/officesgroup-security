@@ -60,7 +60,13 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
   Lang
 >
 
-type PageDocumentDataSlicesSlice = HighlightTextSlice | OfferSlice | HeroSlice | TextSlice | ImageCardsSlice
+type PageDocumentDataSlicesSlice =
+  | IconListSlice
+  | HighlightTextSlice
+  | OfferSlice
+  | HeroSlice
+  | TextSlice
+  | ImageCardsSlice
 
 /**
  * Content for Page documents
@@ -521,6 +527,59 @@ type HighlightTextSliceVariation = HighlightTextSliceDefault
 export type HighlightTextSlice = prismic.SharedSlice<'highlight_text', HighlightTextSliceVariation>
 
 /**
+ * Item in *IconList → Default → Primary → list items*
+ */
+export interface IconListSliceDefaultPrimaryListItemsItem {
+  /**
+   * item field in *IconList → Default → Primary → list items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icon_list.default.primary.list_items[].item
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  item: prismic.KeyTextField
+}
+
+/**
+ * Primary content in *IconList → Default → Primary*
+ */
+export interface IconListSliceDefaultPrimary {
+  /**
+   * list items field in *IconList → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icon_list.default.primary.list_items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  list_items: prismic.GroupField<Simplify<IconListSliceDefaultPrimaryListItemsItem>>
+}
+
+/**
+ * Default variation for IconList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IconListSliceDefault = prismic.SharedSliceVariation<'default', Simplify<IconListSliceDefaultPrimary>, never>
+
+/**
+ * Slice variation for *IconList*
+ */
+type IconListSliceVariation = IconListSliceDefault
+
+/**
+ * IconList Shared Slice
+ *
+ * - **API ID**: `icon_list`
+ * - **Description**: IconList
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IconListSlice = prismic.SharedSlice<'icon_list', IconListSliceVariation>
+
+/**
  * Item in *ImageCards → Default → Primary → Cards*
  */
 export interface ImageCardsSliceDefaultPrimaryCardsItem {
@@ -771,6 +830,11 @@ declare module '@prismicio/client' {
       HighlightTextSliceDefaultPrimary,
       HighlightTextSliceVariation,
       HighlightTextSliceDefault,
+      IconListSlice,
+      IconListSliceDefaultPrimaryListItemsItem,
+      IconListSliceDefaultPrimary,
+      IconListSliceVariation,
+      IconListSliceDefault,
       ImageCardsSlice,
       ImageCardsSliceDefaultPrimaryCardsItem,
       ImageCardsSliceDefaultPrimary,
