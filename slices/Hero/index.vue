@@ -40,7 +40,7 @@ const wordsArray = ['ΑΣΦΑΛΕΙΑ','ΣΙΓΟΥΡΙΑ','ΑΠΟΤΕΛΕΣΜΑ�
         />
         <div  id="container" class="hidden md:block inline-block md:mt-[5px]" v-if="slice.primary.words">
           <div id="word" class="relative w-fit">
-            <span class="absolute w-fit block top-0 overflow-hidden opacity-0 bg-brand px-4 py-2" :key='index' v-for="(word,index) in slice.primary.words">{{ word.word }}</span>
+            <span class="absolute w-fit block top-0 overflow-hidden opacity-0 bg-brand px-4 py-2 font-bold" :key='index' v-for="(word,index) in slice.primary.words">{{ word.word }}</span>
           </div>
         </div>
       </div>
