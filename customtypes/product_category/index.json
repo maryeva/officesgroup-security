@@ -39,7 +39,7 @@
       "sub_category": {
         "type": "Link",
         "config": {
-          "label": "Category",
+          "label": "Subcategory",
           "select": "document",
           "customtypes": ["product_category"]
         }

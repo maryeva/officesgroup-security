@@ -1,3 +1,3 @@
 <template>
-    <iframe width="350" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=350&amp;height=300&amp;hl=en&amp;q=%CE%99%CF%89%CF%83%CE%AE%CF%86%20%CF%84%CF%89%CE%BD%20%CE%A1%CF%89%CE%B3%CF%8E%CE%BD%2015%20%CE%91%CE%B8%CE%AE%CE%BD%CE%B1+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.2096029551444!2d23.719036376158662!3d37.995571199410165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2d4a82738f7%3A0x2bfa3110dce0de5a!2sZachia%201%2C%20Athina%20104%2045!5e0!3m2!1sen!2sgr!4v1740408230833!5m2!1sen!2sgr" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </template>

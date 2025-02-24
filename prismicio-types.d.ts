@@ -269,7 +269,7 @@ interface ProductCategoryDocumentData {
   description: prismic.RichTextField
 
   /**
-   * Category field in *Product Category*
+   * Subcategory field in *Product Category*
    *
    * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
@@ -604,24 +604,14 @@ export interface ImageCardsSliceDefaultPrimaryCardsItem {
   text: prismic.RichTextField
 
   /**
-   * Button Link field in *ImageCards → Default → Primary → Cards*
+   * Link field in *ImageCards → Default → Primary → Cards*
    *
    * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_cards.default.primary.cards[].buttonLink
+   * - **Placeholder**: Link
+   * - **API ID Path**: image_cards.default.primary.cards[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  buttonLink: prismic.LinkField
-
-  /**
-   * Button Text field in *ImageCards → Default → Primary → Cards*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image_cards.default.primary.cards[].buttonText
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  buttonText: prismic.KeyTextField
+  link: prismic.LinkField
 }
 
 /**

@@ -35,8 +35,8 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
             class="relative filter grayscale-50 hover:filter-none hover:cursor-pointer overlay"
           > 
             <PrismicLink
-              v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)"
-              :field="card.buttonLink"
+              v-if="card.link && ('id' in card.link || 'url' in card.link)"
+              :field="card.link"
               tabindex="-1"
             >
               <PrismicImage :field="card.image" class="rounded-2xl shadow-lg"/>
@@ -53,9 +53,9 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
               :field="card.image"
               class="rounded-2xl shadow-lg"
             />
-            <div v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)">
+            <div v-if="card.link && ('id' in card.link || 'url' in card.link)">
               <PrismicLink
-                :field="card.buttonLink"
+                :field="card.link"
               >
               </PrismicLink>
             </div>
