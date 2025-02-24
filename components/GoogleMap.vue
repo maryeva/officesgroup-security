@@ -1,3 +1,3 @@
 <template>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.2096029551444!2d23.719036376158662!3d37.995571199410165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2d4a82738f7%3A0x2bfa3110dce0de5a!2sZachia%201%2C%20Athina%20104%2045!5e0!3m2!1sen!2sgr!4v1740408230833!5m2!1sen!2sgr" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe class="h-[350px] w-[100%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.2096029551444!2d23.719036376158662!3d37.995571199410165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2d4a82738f7%3A0x2bfa3110dce0de5a!2sZachia%201%2C%20Athina%20104%2045!5e0!3m2!1sen!2sgr!4v1740408230833!5m2!1sen!2sgr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </template>

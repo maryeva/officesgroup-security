@@ -24,11 +24,11 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
       >
         {{ $prismic.asText(slice.primary.heading) }}
       </Heading>
-      <ul class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <li
-          v-for="card in slice.primary.cards"
+          v-for="(card, index) in slice.primary.cards"
           :key="card.image.url ?? undefined"
-          class="grid gap-8"
+          :class="`${slice.primary.cards.length%2 !== 0 && index === slice.primary.cards.length-1 ? 'md:last:col-span-full center-last-item' : ''}`"
         >
           <div
             v-if="card.image.url"
@@ -39,7 +39,7 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
               :field="card.link"
               tabindex="-1"
             >
-              <PrismicImage :field="card.image" class="rounded-2xl shadow-lg"/>
+              <PrismicImage :field="card.image" class="rounded-2xl shadow-lg w-auto"/>
               <div class="h-[100px] w-full absolute bottom-0 left-0 right-0 rounded-2xl ">
                 <PrismicRichText
                   :field="card.text"
@@ -79,5 +79,14 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
   right: 0;
   transition: opacityease-in-out;
   transition-duration: inherit;
+}
+
+@media only screen and (min-width: 768px) {
+  .center-last-item img {
+    grid-column: 1 / -1;
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 </style>

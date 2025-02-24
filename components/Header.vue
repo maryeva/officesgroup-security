@@ -73,7 +73,6 @@ const gotoPage = (link) => {
     <div class="md:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pt-2 pb-3">
         <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
-          <p>lalala</p>
         </transition>
       </div>
     </div>

@@ -15,7 +15,7 @@ const serializer: HTMLRichTextMapSerializer = {
     /* html */ `<h2 class="font-semibold leading-tight tracking-tight md:leading-tight text-3xl md:text-5xl mb-4 mt-12 first:mt-0 last:mb-0">${children}</h2>`,
 }
 
-const wordsArray = ['ΑΣΦΑΛΕΙΑ','ΣΙΓΟΥΡΙΑ','ΑΠΟΤΕΛΕΣΜΑΤΙΚΟΤΗΤΑ', 'ΠΡΟΣΤΑΣΙΑ', 'ΑΙΣΘΗΤΙΚΗ']
+const wordsArray = ['ΑΣΦΑΛΕΙΑ','ΣΙΓΟΥΡΙΑ','ΑΠΟΤΕΛΕΣΜΑΤΙΚΟΤΗΤΑ', 'ΠΡΟΣΤΑΣΙΑ', 'ΕΞΥΠΗΡΕΤΗΣΗ']
 </script>
 
 <template>

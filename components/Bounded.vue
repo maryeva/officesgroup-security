@@ -26,7 +26,7 @@ defineProps({
       'py-32 md:py-48': yPadding === 'lg',
     }"
   >
-    <div class="md:mx-auto w-full max-w-[90%]">
+    <div class="md:mx-auto w-full md:max-w-[90%]">
       <slot />
     </div>
   </Component>
