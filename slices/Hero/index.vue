@@ -19,7 +19,7 @@ const wordsArray = ['ΑΣΦΑΛΕΙΑ','ΣΙΓΟΥΡΙΑ','ΑΠΟΤΕΛΕΣΜΑ�
 </script>
 
 <template>
-  <section class="relative bg-slate-900 text-white h-[500px] mb-[50px]">
+  <section class="relative bg-slate-900 text-white h-[300px] md:h-[500px] mb-[50px]">
     <figure class="absolute inset-0">
       <PrismicImage
         v-if="slice.primary.backgroundImage.url"
@@ -31,7 +31,7 @@ const wordsArray = ['ΑΣΦΑΛΕΙΑ','ΣΙΓΟΥΡΙΑ','ΑΠΟΤΕΛΕΣΜΑ�
       y-padding="lg"
       class="relative"
     >
-      <div :class="['md:flex md:justify-center md:align-items-center', slice.primary.words[0]?.word ? 'md:ml-[-200px]' : '']">
+      <div :class="['flex justify-center align-items-center', slice.primary.words[0]?.word ? 'md:ml-[-200px]' : '']">
         <PrismicRichText
           :field="slice.primary.text"
           :html-serializer="serializer"
@@ -45,7 +45,7 @@ const wordsArray = ['ΑΣΦΑΛΕΙΑ','ΣΙΓΟΥΡΙΑ','ΑΠΟΤΕΛΕΣΜΑ�
         </div>
       </div>
     </Bounded>
-    <img src="/public/wave_bg.png" class="absolute bg-none bg-bottom bg-no-repeat left-0 right-0 bottom-[-60px]"/>
+    <img src="/public/wave_bg.png" class="absolute bg-none bg-bottom bg-no-repeat left-0 right-0 bottom-0 md:bottom-[-60px]"/>
   </section>
 </template>
 

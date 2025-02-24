@@ -23,7 +23,7 @@ defineProps({
     :class="{
       'py-4': yPadding === 'sm',
       'py-20 md:py-20': yPadding === 'md',
-      'py-32 md:py-48': yPadding === 'lg',
+      'py-20 md:py-48': yPadding === 'lg',
     }"
   >
     <div class="md:mx-auto w-full md:max-w-[90%]">
