@@ -23,10 +23,22 @@ export default defineNuxtConfig({
   css: [
     '~/styles/global.css'
   ],
+  
 
-  modules: [
-    '@nuxtjs/prismic',
-    '@nuxtjs/tailwindcss'
+  modules: ['@nuxtjs/prismic', '@nuxtjs/tailwindcss', 
+      ['nuxt-mail', {
+      message: {
+        to: process.env.CONTACT_EMAIL,
+      },
+      smtp: {
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass:process.env.SMTP_PASS
+        }
+      },
+    }]
   ],
 
   prismic: {

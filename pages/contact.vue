@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
+const mail = useMail()
 const status = ref(null);
 const error = ref(null);
 
@@ -11,17 +12,12 @@ const handleFormSubmit = async (event) => {
       error.value = null;
       const myForm = event.target;
       const formData = new FormData(myForm);
-      const res = await fetch('/__forms.html', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-      });
-      if (res.status === 200) {
-          status.value = 'ok';
-      } else {
-          status.value = 'error';
-          error.value = `${res.status} ${res.statusText}`;
-      }
+      mail.send({
+        from: 'Offices Service Website',
+        subject: 'Νέo αίτημα επικοινωνίας',
+        text: `Στοιχεία πελάτη<br><br> <b>Όνομα:</b> ${formData.get('name')} <br><br> <b>Email:</b> ${formData.get('email')} <br><br> <b>Τηλέφωνο:</b>${formData.get('phone')} <br><br> <b>Τύπος πελάτη:</b>${formData.get('customer_type')}`
+      })
+      status.value = 'ok';
   } catch (e) {
       status.value = 'error';
       error.value = e;
