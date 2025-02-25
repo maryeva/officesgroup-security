@@ -15,7 +15,7 @@ const handleFormSubmit = async (event) => {
       mail.send({
         from: 'Offices Service Website',
         subject: 'Νέo αίτημα επικοινωνίας',
-        text: `Στοιχεία πελάτη<br><br> <b>Όνομα:</b> ${formData.get('name')} <br><br> <b>Email:</b> ${formData.get('email')} <br><br> <b>Τηλέφωνο:</b>${formData.get('phone')} <br><br> <b>Τύπος πελάτη:</b>${formData.get('customer_type')}`
+        html: `<h2>Στοιχεία πελάτη</h2> <br><br> <b>Όνομα: </b>${formData.get('name')} <br> <b>Email: </b>${formData.get('email')} <br> <b>Τηλέφωνο: </b>${formData.get('phone')} <br> <b>Τύπος πελάτη: </b>${formData.get('customer_type')}`
       })
       status.value = 'ok';
   } catch (e) {
