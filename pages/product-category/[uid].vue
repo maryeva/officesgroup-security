@@ -79,14 +79,15 @@ const truncateText = (text: string) => {
     </div>
     <div v-else class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-20">
       <div v-for="product in data?.products" :key="product.uid">
-        <a :href="`/products/${product.uid}`" class="flex justify-center">
+        <a :href="`/products/${product.uid}`" class="peer flex justify-center">
           <PrismicImage
             v-if="isFilled.image(product.data.image)"
             :field="product.data.image"
             class="h-[200px] w-auto"
           ></PrismicImage>
         </a>
-        <p class="font-bold mt-4 mb-2">{{ product.data.name }}</p>
+
+        <a :href="`/products/${product.uid}`" class="peer-hover:underline peer-hover:text-brand"><p class="font-bold mt-4 mb-2">{{ product.data.name }}</p></a>
         <p class="">{{ truncateText(product.data.description[0]?.text) }}...</p>
        
       </div>
