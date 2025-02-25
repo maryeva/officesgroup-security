@@ -21,3 +21,9 @@ a:hover {
   cursor: pointer;
   transition: color 100ms ease-in-out;
 }
+
+@media only screen and (max-width: 640px) {
+  .no-scroll {
+    overflow-y: hidden;
+  }
+}

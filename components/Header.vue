@@ -13,6 +13,19 @@ const { data: page } = await useAsyncData(`[product-categories]`, () =>
 const gotoPage = (link) => {
   window.location.href = link
 }
+
+const showMenu = ref(false)
+
+const toggleMenu = () => {
+  console.log(showMenu.value)
+  showMenu.value = !showMenu.value
+
+  if (showMenu.value) {
+    document.body.classList.add('no-scroll')
+  } else {
+    document.body.classList.remove('no-scroll')
+  }
+}
 </script>
 
 <template>
@@ -22,7 +35,7 @@ const gotoPage = (link) => {
         <LogoSVG class="h-[50px]"/>
       </NuxtLink>
 
-     <Menu class="hidden md:flex flex-wrap gap-6 md:gap-10">
+     <Menu class="hidden lg:flex flex-wrap gap-6 lg:gap-10">
       <div>
         <MenuButton v-for="item in navigation?.data.links" :key="$prismic.asText(item.label) || ''" class="relative font-semibold text-slate-800 tracking-tight">
           <div v-if="$prismic.asLink(item.link) === '/products'" class="group inline-block uppercase mt-[1px]">
@@ -45,34 +58,41 @@ const gotoPage = (link) => {
       </div>
      </Menu>
 
-     <div class="relative flex h-16 items-center justify-between md:hidden">
-      <div class="absolute inset-y-0 left-0 flex items-center">
-          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
-              <span class="absolute -inset-0.5"></span>
-              <span class="sr-only">Open main menu</span>
-              <!--
-                Icon when menu is closed.
-                Menu open: "hidden", Menu closed: "block"
-              -->
+     <div class="relative flex h-16 items-center justify-between lg:hidden">
+      <div class="absolute inset-y-0 right-0 flex items-center">
+          <button @click="toggleMenu()" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-brand hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
               <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
-              <!--
-                Icon when menu is open.
-                Menu open: "block", Menu closed: "hidden"
-              -->
               <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
           </button>
         </div>
-      </div>
+     </div>
     </div>
 
-      <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="md:hidden" id="mobile-menu">
+    <div v-if="showMenu" class="lg:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pt-2 pb-3">
         <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
+          <nav class="absolute top-[96px] left-0 right-0 px-8 py-4 z-10 bg-white w-full sm:h-auto h-full shadow-2xl overflow-y-hidden sm:overflow-y-auto">
+            <div class="flex flex-col gap-4">
+              <div v-for="item in navigation?.data.links" :key="$prismic.asText(item.label) || ''" class="relative font-semibold text-slate-800 tracking-tight">
+                <div v-if="$prismic.asLink(item.link) === '/products'" class="group inline-block uppercase mt-[1px]">
+                  <span class="group-hover:text-brand group-hover:underline">{{ $prismic.asText(item.label) }}</span>
+                </div>
+                <PrismicLink v-else :field="item.link" class="uppercase">
+                  {{ $prismic.asText(item.label) }}
+                </PrismicLink>
+        
+                  <ul v-if="$prismic.asLink(item.link) === '/products'">
+                    <li v-for='link in page' :key='link.id'>
+                      <a :href='link.url' @click.stop="gotoPage(link.url)" :class="[active ? 'text-slate-800 outline-hidden' : 'text-gray-700', 'block px-4 py-2 text-sm']">{{ link.data.category }}</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </nav>
         </transition>
       </div>
     </div>
