@@ -28,7 +28,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/prismic', '@nuxtjs/tailwindcss', 
       ['nuxt-mail', {
       message: {
-        to: process.env.CONTACT_EMAIL,
+        to: 'mary.manousou@gmail.com',
       },
       smtp: {
         host: process.env.SMTP_HOST,
