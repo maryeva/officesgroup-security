@@ -30,11 +30,13 @@ const handleFormSubmit = async (event) => {
       y-padding="sm"
       class="relative mt-[50px]"
     >
-    <div class="grid grid-cols-12 gap-x-6">
-      <div class="col-span-12 md:col-start-3 md:col-span-8 mb-8">
-        <p>Συμπληρώνοντας τα στοιχεία σας στην φόρμα επικοινωνίας θα έρθουμε σε επαφή μαζί σας προκειμένου να κλείσουμε ένα ραντεβού και να σας επισκευθεί εξειδικευμένος σύμβουλος της εταιρείας μας με σκοπό να κατανοήσει τις ανάγκες σας και να σας προτείνει την πιο ολοκληρωμένη λύση για τον χώρο σας. Η επίσκεψη σε καμία περίπτωση δεν είναι δεσμευτική και δεν σας δημιουργεί καμία απολύτως υποχρέωση προς την εταιρεία μας.</p>
+    <div class="flex flex-col md:flex-row gap-x-32 justify-center">
+      <div class="mb-8 md:order-2">
+        <p>Eπικοινωνείστε μαζί μας μέσω viber ή email</p>
+        <p class="mt-2 text-lg font-bold"><img src="/public/viber.svg" class="h-[25px] w-[25px] inline-block mr-[5px]"/>Viber: 6936433933</p>
+        <p class="mt-2 text-lg font-bold "><EmailIcon class="inline-block mr-[5px] text-brand"/>Email: <a href="mailto:offices@otenet.gr" class="inline-block">offices@otenet.gr</a></p>
       </div>
-      <div class="col-span-12 md:col-start-5 md:col-span-4">
+      <div class="md:w-[40%] md:order-1">
         
         <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" :onSubmit='handleFormSubmit'>
           <input type="hidden" name="form-name" value="contact" />

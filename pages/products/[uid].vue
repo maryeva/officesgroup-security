@@ -46,11 +46,13 @@ useHead({
             v-if="page?.data.image"
             :field="page.data.image"
         />
-        <PrismicRichText
-        class="col-span-4"
-        v-if="isFilled.richText(page?.data.description)"
-        :field="page?.data.description"
-        />
+        <div class="col-span-4">
+          <h2 class="font-semibold leading-tight tracking-tight md:leading-tight text-lg md:text-2xl mb-7 mt-12 first:mt-0 last:mb-0" v-if="isFilled.richText(page?.data.description)">Περιγραφή</h2>
+          <PrismicRichText
+          v-if="isFilled.richText(page?.data.description)"
+          :field="page?.data.description"
+          />
+        </div>
     </div>
   </section>
   <section class="px-6 py-20 md:py-28">
