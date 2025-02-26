@@ -678,28 +678,53 @@ type ImageCardsSliceVariation = ImageCardsSliceDefault
 export type ImageCardsSlice = prismic.SharedSlice<'image_cards', ImageCardsSliceVariation>
 
 /**
- * Primary content in *Offer → Default → Primary*
+ * Item in *Offer → Default → Primary → Offer item*
  */
-export interface OfferSliceDefaultPrimary {
+export interface OfferSliceDefaultPrimaryOfferItemItem {
   /**
-   * title field in *Offer → Default → Primary*
+   * title field in *Offer → Default → Primary → Offer item*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Title
-   * - **API ID Path**: offer.default.primary.title
+   * - **API ID Path**: offer.default.primary.offer_item[].title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField
 
   /**
-   * description field in *Offer → Default → Primary*
+   * description field in *Offer → Default → Primary → Offer item*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: Description
-   * - **API ID Path**: offer.default.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.default.primary.offer_item[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  description: prismic.KeyTextField
+  description: prismic.RichTextField
+
+  /**
+   * image field in *Offer → Default → Primary → Offer item*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.default.primary.offer_item[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+}
+
+/**
+ * Primary content in *Offer → Default → Primary*
+ */
+export interface OfferSliceDefaultPrimary {
+  /**
+   * Offer item field in *Offer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.default.primary.offer_item[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  offer_item: prismic.GroupField<Simplify<OfferSliceDefaultPrimaryOfferItemItem>>
 }
 
 /**
@@ -842,6 +867,7 @@ declare module '@prismicio/client' {
       ImageCardsSliceVariation,
       ImageCardsSliceDefault,
       OfferSlice,
+      OfferSliceDefaultPrimaryOfferItemItem,
       OfferSliceDefaultPrimary,
       OfferSliceVariation,
       OfferSliceDefault,
