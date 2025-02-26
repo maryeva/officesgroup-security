@@ -44,6 +44,13 @@
           "customtypes": ["product_category"]
         }
       },
+      "priority": {
+        "type": "Number",
+        "config": {
+          "label": "Priority",
+          "placeholder": "Priority"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

@@ -280,6 +280,17 @@ interface ProductCategoryDocumentData {
   sub_category: prismic.ContentRelationshipField<'product_category'>
 
   /**
+   * Priority field in *Product Category*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: Priority
+   * - **API ID Path**: product_category.priority
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  priority: prismic.NumberField
+
+  /**
    * Slice Zone field in *Product Category*
    *
    * - **Field Type**: Slice Zone

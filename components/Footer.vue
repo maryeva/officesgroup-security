@@ -24,8 +24,7 @@
             <li class="mt-8 flex ">
               <EmailIcon class="inline-block mr-[5px] text-brand"/>
               <div class="inline-block ml-[5px]">
-                <a href="mailto:offices@officesservice.gr" class="block">offices@officesservice.gr</a>
-                <a href="mailto:synergates@officesgroup.gr" class="mt-2">synergates@officesgroup.gr</a>
+                <a href="mailto:offices@otenet.gr" class="block">offices@otenet.gr</a>
               </div>
               
             </li>
