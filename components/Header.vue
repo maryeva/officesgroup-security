@@ -50,7 +50,7 @@ const toggleMenu = () => {
           
   
           <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
-            <MenuItems v-if="$prismic.asLink(item.link) === '/products'" class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden">
+            <MenuItems v-if="$prismic.asLink(item.link) === '/products'" class="absolute right-[-140px] z-10 mt-2 w-96 py-4 px-8 top-[50px] origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden">
                 <MenuItem v-slot="{ active }" v-for='link in page' :key='link.id'>
                   <a :href='link.url' @click.stop="gotoPage(link.url)" :class="[active ? 'text-slate-800 outline-hidden' : 'text-gray-700', 'block px-4 py-2 text-sm']">{{ link.data.category }}</a>
                 </MenuItem>
