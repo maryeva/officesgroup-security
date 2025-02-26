@@ -10,6 +10,8 @@ const { data: page } = await useAsyncData(`[product-categories]`, () =>
   prismic.client.getAllByType("product_category")
 );
 
+const sortedItems = page.value.sort((a,b) => a.data.priority - b.data.priority)
+
 const gotoPage = (link) => {
   window.location.href = link
 }
@@ -86,7 +88,7 @@ const toggleMenu = () => {
                 </PrismicLink>
         
                   <ul v-if="$prismic.asLink(item.link) === '/products'">
-                    <li v-for='link in page' :key='link.id'>
+                    <li v-for='link in sortedItems' :key='link.id'>
                       <a :href='link.url' @click.stop="gotoPage(link.url)" :class="[active ? 'text-slate-800 outline-hidden' : 'text-gray-700', 'block px-4 py-2 text-sm']">{{ link.data.category }}</a>
                     </li>
                   </ul>
