@@ -12,6 +12,15 @@ defineProps(
     "context",
   ]),
 );
+
+const carouselConfig = {
+  itemsToShow: 1,
+  wrapAround: true,
+  autoplay: 4000,
+  gap: 5, 
+  pauseAutoplayOnHover: true,
+  transition: 300
+}
 </script>
 
 <template>
@@ -21,8 +30,11 @@ defineProps(
     y-padding="sm"
   >
 
-  <div class="mx-auto p-sm sm:px-8 sm:py-4 bg-brand text-white border-white border-2 rounded-2xl shadow-xl">
-    <div class="max-w-content mx-auto" v-for="(item,index) in slice.primary.offer_item" :key="index">
+
+
+<Carousel v-bind="carouselConfig">
+  <Slide class="mx-auto p-sm sm:px-8 sm:py-4 bg-brand text-white border-white border-2 rounded-2xl shadow-xl" v-for="(item,index) in slice.primary.offer_item" :key="index">
+    <div class="max-w-content mx-auto">
       <div class="inline-flex items-center space-x-2xs min-w-fit bg-white text-brand rounded px-2 py-2 mb-8">
         <span class="font-bold uppercase tracking-5pc text-center w-full text-lg max-w-[27rem]">{{ item.title }}</span>
       </div>
@@ -49,7 +61,13 @@ defineProps(
         </div>
       </div>
     </div>
-  </div>
+  </Slide>
+  <template #addons>
+    <Navigation />
+    <Pagination />
+  </template>
+</Carousel>
+
   </Bounded>
 </template>
 

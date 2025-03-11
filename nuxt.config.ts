@@ -25,21 +25,19 @@ export default defineNuxtConfig({
   ],
   
 
-  modules: ['@nuxtjs/prismic', '@nuxtjs/tailwindcss', 
-      ['nuxt-mail', {
-      message: {
-        to: 'mary.manousou@gmail.com',
-      },
-      smtp: {
-        host: process.env.SMTP_HOST,
-        port: process.env.SMTP_PORT,
-        auth: {
-          user: process.env.SMTP_USER,
-          pass:process.env.SMTP_PASS
-        }
-      },
-    }]
-  ],
+  modules: ['@nuxtjs/prismic', '@nuxtjs/tailwindcss', 'vue3-carousel-nuxt', ['nuxt-mail', {
+  message: {
+    to: 'mary.manousou@gmail.com',
+  },
+  smtp: {
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass:process.env.SMTP_PASS
+    }
+  },
+}], 'vue3-carousel-nuxt'],
 
   prismic: {
     endpoint: repositoryName,
