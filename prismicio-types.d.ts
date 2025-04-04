@@ -121,7 +121,7 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
   Lang
 >
 
-type ProductDocumentDataSlicesSlice = never
+type ProductDocumentDataSlicesSlice = TextSlice
 
 /**
  * Content for Product documents
@@ -803,9 +803,43 @@ export type TextSliceTwoColumns = prismic.SharedSliceVariation<
 >
 
 /**
+ * Primary content in *Text → With Image → Primary*
+ */
+export interface TextSliceWithImagePrimary {
+  /**
+   * image field in *Text → With Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.withImage.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Text field in *Text → With Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.withImage.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField
+}
+
+/**
+ * With Image variation for Text Slice
+ *
+ * - **API ID**: `withImage`
+ * - **Description**: Text
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceWithImage = prismic.SharedSliceVariation<'withImage', Simplify<TextSliceWithImagePrimary>, never>
+
+/**
  * Slice variation for *Text*
  */
-type TextSliceVariation = TextSliceDefault | TextSliceTwoColumns
+type TextSliceVariation = TextSliceDefault | TextSliceTwoColumns | TextSliceWithImage
 
 /**
  * Text Shared Slice
@@ -874,9 +908,11 @@ declare module '@prismicio/client' {
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceTwoColumnsPrimary,
+      TextSliceWithImagePrimary,
       TextSliceVariation,
       TextSliceDefault,
       TextSliceTwoColumns,
+      TextSliceWithImage,
     }
   }
 }

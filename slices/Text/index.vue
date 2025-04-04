@@ -11,6 +11,7 @@ defineProps(getSliceComponentProps<Content.TextSlice>(
 
 <template>
   <Bounded
+    v-if="slice.variation !== 'withImage'"
     as="section"
     class="bg-none leading-relaxed"
     y-padding="sm"
@@ -24,4 +25,11 @@ defineProps(getSliceComponentProps<Content.TextSlice>(
       wrapper="div"
     />
   </Bounded>
+  <div v-else class="grid grid-cols-6 py-8 items-center">
+    <PrismicImage class="col-span-2 max-h-[250px] w-auto m-auto " v-if="slice.variation === 'withImage'" :field="slice.primary.image"/>
+    <PrismicRichText
+      :field="slice.primary.text"
+      class="text-lg col-span-4"
+    />
+  </div>
 </template>

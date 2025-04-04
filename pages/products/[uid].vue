@@ -2,6 +2,7 @@
 import { isFilled } from "@prismicio/client";
 import { ref, watch } from "vue";
 import type { ProductDocument } from "~/prismicio-types";
+import { components } from '~/slices'
 
 
 const prismic = usePrismic();
@@ -54,6 +55,11 @@ useHead({
           />
         </div>
     </div>
+    <SliceZone
+      wrapper="main"
+      :slices="page?.data.slices ?? []"
+      :components="components"
+    />
   </section>
   <section class="px-6 py-20 md:py-28" v-if="relatedProducts.length">
     <h2 class="font-semibold leading-tight tracking-tight md:leading-tight text-3xl md:text-4xl mb-7 mt-12 first:mt-0 last:mb-0">Δείτε επίσης</h2>
