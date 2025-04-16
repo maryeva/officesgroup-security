@@ -550,6 +550,16 @@ export interface IconListSliceDefaultPrimaryListItemsItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   item: prismic.KeyTextField
+
+  /**
+   * description field in *IconList → Default → Primary → list items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icon_list.default.primary.list_items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField
 }
 
 /**

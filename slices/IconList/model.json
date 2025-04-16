@@ -24,6 +24,15 @@
                   "label": "item",
                   "placeholder": ""
                 }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+                }
               }
             }
           }

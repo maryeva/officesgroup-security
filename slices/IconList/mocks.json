@@ -16,6 +16,20 @@
 									"value": "himself",
 									"type": "Text"
 								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Elit reprehenderit proident deserunt velit nisi. Cillum consectetur adipisicing in ea magna sunt eu est esse exercitation tempor proident. Cupidatat veniam tempor dolore eu deserunt minim esse aliqua officia dolore veniam consectetur."
+											}
+										}
+									]
+								}
 							]
 						]
 					}
