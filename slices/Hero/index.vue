@@ -31,16 +31,16 @@ const wordsArray = ['ΑΣΦΑΛΕΙΑ','ΣΙΓΟΥΡΙΑ','ΑΠΟΤΕΛΕΣΜΑ�
       y-padding="lg"
       class="relative"
     >
-      <div :class="['flex justify-center align-items-center', slice.primary.words[0]?.word ? 'md:ml-[-200px]' : '']">
+      <div :class="['flex justify-center align-items-center', slice.primary.words[0]?.word ? 'md:ml-[-200px] lg:ml-[-300px]' : '']">
         <PrismicRichText
           :field="slice.primary.text"
           :html-serializer="serializer"
-          class="max-w-2xl text-center text-5xl font-extrabold inline-block md:mr-4"
+          class="max-w-2xl text-center text-4xl md:text-3xl lg:text-4xl font-extrabold inline-block md:mr-4"
           wrapper="h1"
         />
-        <div  id="container" class="hidden md:block inline-block md:mt-[5px]" v-if="slice.primary.words">
+        <div  id="container" class="hidden md:block inline-block md:mt-[-8px]" v-if="slice.primary.words">
           <div id="word" class="relative w-fit">
-            <span class="absolute w-fit block top-0 overflow-hidden opacity-0 bg-brand px-4 py-2 font-bold" :key='index' v-for="(word,index) in slice.primary.words">{{ word.word }}</span>
+            <span class="absolute w-fit block top-0 overflow-hidden opacity-0 bg-brand px-4 py-2 font-bold md:text-2xl lg:text-4xl" :key='index' v-for="(word,index) in slice.primary.words">{{ word.word }}</span>
           </div>
         </div>
       </div>
