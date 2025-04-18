@@ -24,23 +24,16 @@ const carouselConfig = {
 </script>
 
 <template>
-
-<Bounded
-    as="section"
-    y-padding="sm"
-  >
-
-
-
-<Carousel v-bind="carouselConfig">
+<Carousel v-bind="carouselConfig" class="mx-[20px]">
   <Slide class="mx-auto p-sm sm:px-8 sm:py-4 bg-brand text-white border-white border-2 rounded-2xl shadow-xl" v-for="(item,index) in slice.primary.offer_item" :key="index">
     <div class="max-w-content mx-auto">
-      <div class="inline-flex items-center space-x-2xs min-w-fit bg-white text-brand rounded px-2 py-2 mb-8">
-        <span class="font-bold uppercase tracking-5pc text-center w-full text-lg max-w-[27rem]">{{ item.title }}</span>
+      <div class="space-x-2xs min-w-fit bg-white text-brand rounded px-2 py-2 mb-8 font-bold tracking-5pc text-center w-full text-4xl">
+        <span class="uppercase block">ΠΡΟΣΦΟΡΑ</span>
+        <span class="block">{{ item.title }}</span>
       </div>
     
       <div class="flex justify-between lg:items-center gap-6 flex-col sm:flex-row">
-        <div class="flex flex-col lg:flex-row">
+        <div class="flex flex-col lg:flex-row text-xl">
           <div>
             <div class="flex gap-8 items-center">
               <PrismicRichText
@@ -67,8 +60,6 @@ const carouselConfig = {
     <Pagination />
   </template>
 </Carousel>
-
-  </Bounded>
 </template>
 
 <style scoped>
