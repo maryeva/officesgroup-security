@@ -10,28 +10,6 @@
 						"__TYPE__": "GroupItemContent",
 						"value": [
 							[
-								"title",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "shelter",
-									"type": "Text"
-								}
-							],
-							[
-								"description",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Irure aute irure velit officia aliqua. Aute voluptate quis qui velit fugiat anim ut culpa cupidatat occaecat nulla. Id esse cupidatat ea id ipsum consectetur id incididunt in ad."
-											}
-										}
-									]
-								}
-							],
-							[
 								"image",
 								{
 									"origin": {

@@ -692,26 +692,6 @@ export type ImageCardsSlice = prismic.SharedSlice<'image_cards', ImageCardsSlice
  */
 export interface OfferSliceDefaultPrimaryOfferItemItem {
   /**
-   * title field in *Offer → Default → Primary → Offer item*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Title
-   * - **API ID Path**: offer.default.primary.offer_item[].title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField
-
-  /**
-   * description field in *Offer → Default → Primary → Offer item*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.default.primary.offer_item[].description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField
-
-  /**
    * image field in *Offer → Default → Primary → Offer item*
    *
    * - **Field Type**: Image
