@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/prismic', '@nuxtjs/tailwindcss', 'vue3-carousel-nuxt', ['nuxt-mail', {
   message: {
-    to: 'mary.manousou@gmail.com',
+    to: 'synergates@officesgroup.gr',
   },
   smtp: {
     host: process.env.SMTP_HOST,
